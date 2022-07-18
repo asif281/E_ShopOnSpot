@@ -1,10 +1,14 @@
 // Using Models of Shared Project
 global using EOnSpotShop.Shared.Models;
-
-using Microsoft.AspNetCore.ResponseCompression;
+global using Microsoft.EntityFrameworkCore;
+using EOnSpotShop.Server.ShopAppContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<ShopContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
