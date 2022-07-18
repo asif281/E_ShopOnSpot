@@ -28,7 +28,7 @@ namespace EOnSpotShop.Server.Controllers
         };
 
         [HttpGet]
-        public async Task<IActionResult> GetProduct()
+        public async Task<ActionResult<List<Product>>> GetProduct()
         {
             return Ok(products);
         }
