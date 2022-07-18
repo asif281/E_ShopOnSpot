@@ -1,3 +1,6 @@
+// Using Models of Shared Project
+global using EOnSpotShop.Shared.Models;
+
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
