@@ -17,7 +17,7 @@ namespace EOnSpotShop.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetProduct()
         {
-            var products = _shopContext.Products.ToList(); 
+            var products = await _shopContext.Products.ToListAsync(); 
             return Ok(products);
         }
     }
